@@ -35,19 +35,19 @@ function sortTable(column) {
     const currentDirection = table.querySelector(`th[data-sort="${column}"]`).dataset.sortDirection;
     const newDirection = currentDirection === 'asc' ? 'desc' : 'asc';
 
-    // Reset all sort indicators
+   
     table.querySelectorAll('th').forEach(th => {
         th.removeAttribute('data-sort-direction');
     });
 
-    // Set the new sort direction
+    
     table.querySelector(`th[data-sort="${column}"]`).dataset.sortDirection = newDirection;
 
     chemicalData.sort((a, b) => {
         let aValue = a[column];
         let bValue = b[column];
 
-        // Special handling for chemicalName column
+        
         if (column === 'id') {
             aValue = a.chemicalName.toLowerCase();
             bValue = b.chemicalName.toLowerCase();
@@ -103,7 +103,7 @@ function makeEditable(cell) {
     const field = cell.dataset.field;
     let value = cell.textContent;
     
-    // Remove the ID from the chemical name when editing
+   
     if (field === 'chemicalName') {
         value = value.split('. ')[1];
     }
@@ -209,7 +209,6 @@ tbody.addEventListener('click', (e) => {
     }
 });
 
-// Add event listeners for sorting
 document.querySelectorAll('th.sortable').forEach(th => {
     th.addEventListener('click', () => {
         const column = th.dataset.sort;
