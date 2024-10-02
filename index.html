@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Supplies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chemical supplies</h1>
+            <div class="toolbar">
+                <button id="addRow" title="Add Row">+</button>
+                <button id="moveRowDown" title="Move Row Down">↓</button>
+                <button id="moveRowUp" title="Move Row Up">↑</button>
+                <button id="deleteRow" title="Delete Row">🗑️</button>
+                <button id="refreshData" title="Refresh Data">↻</button>
+                <button id="saveData" title="Save Data">💾</button>
+            </div>
+        </header>
+        <table id="chemicalTable">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectAll"></th>
+                    <th class="sortable" data-sort="id">Chemical name</th>
+                    <th class="sortable" data-sort="vendor">Vendor</th>
+                    <th class="sortable" data-sort="density">Density<br><small>g/m³</small></th>
+                    <th class="sortable" data-sort="viscosity">Viscosity<br><small>m²/s</small></th>
+                    <th class="sortable" data-sort="packaging">Packaging</th>
+                    <th class="sortable" data-sort="packSize">Pack size</th>
+                    <th class="sortable" data-sort="unit">Unit</th>
+                    <th class="sortable" data-sort="quantity">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
